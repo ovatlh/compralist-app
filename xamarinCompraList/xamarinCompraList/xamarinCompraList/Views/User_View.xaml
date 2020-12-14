@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarinCompraList.Views.User_View"
+             xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
+             Title="User"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.BindingContext>
+        <vm:User_VM/>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="10" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Usuario"/>
+
+        <StackLayout Grid.Row="1">
+            <Entry x:Name="txtUsername" Text="{Binding Username}" Placeholder="Nombre"/>
+            <CollectionView VerticalOptions="StartAndExpand" x:Name="lstAvatars" SelectionMode="Single" ItemsSource="{Binding Avatars}" SelectionChangedCommand="{Binding AvatarSelectedCommand}" SelectedItem="{Binding AvatarString}" Margin="0">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout VerticalItemSpacing="0" HorizontalItemSpacing="0" Orientation="Vertical" Span="3"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="0" BackgroundColor="Transparent">
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Frame Padding="0" Margin="0" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="Green" CornerRadius="360" />
+                                <Label Text="{Binding .}" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+        
+        <Button Grid.Row="2" VerticalOptions="EndAndExpand" Text="Guardar" Command="{Binding SavePreferencesCommand}"/>
+    </Grid>
+</ContentPage>

@@ -2,8 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCompraList.Views.Detail_View"
-             Title="Detail">
-    <StackLayout Padding="10">
-        <Label Text="Detail" />
-    </StackLayout>
+             xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
+             Title="Detail"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="home"
+             BackgroundColor="WhiteSmoke">
+
+    <ContentPage.BindingContext>
+        <vm:Detail_VM/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="Green">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="CompraList" Grid.Column="0" VerticalOptions="Center" FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Frame Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="30" Margin="10" Padding="0" CornerRadius="180" BackgroundColor="Blue">
+                <Grid Margin="0" Padding="0">
+                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0" Padding="0" HorizontalOptions="EndAndExpand">
+                        <Label Text="{Binding Username}" MinimumWidthRequest="10" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" Margin="0" Padding="0" />
+                        <Frame BackgroundColor="White" HasShadow="False" Margin="0" Padding="0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="End" CornerRadius="360" />
+                    </StackLayout>
+                    <Button Margin="0" Padding="0" Text="" Opacity="0.1" BackgroundColor="Red" Command="{Binding UserCommand}"/>
+                </Grid>
+            </Frame>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            
+        </ScrollView>
+
+        <Frame IsClippedToBounds="True" HasShadow="True" CornerRadius="360" WidthRequest="50" HeightRequest="50" Grid.RowSpan="2" HorizontalOptions="End" VerticalOptions="End" BackgroundColor="White" Margin="10" Padding="0" >
+            <Button Text="+" Margin="-50" FontSize="Title" WidthRequest="100" HeightRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        </Frame>
+    </Grid>
 </ContentPage>

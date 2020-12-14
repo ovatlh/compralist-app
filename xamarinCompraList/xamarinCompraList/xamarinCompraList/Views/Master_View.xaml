@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCompraList.Views.Master_View"
+             xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
              Title="Master">
+
+    <ContentPage.BindingContext>
+        <vm:Master_VM/>
+    </ContentPage.BindingContext>
+    
     <StackLayout Padding="10">
         <Label Text="Master" />
+        <Button Text="User" Command="{Binding UserCommand}"/>
     </StackLayout>
 </ContentPage>

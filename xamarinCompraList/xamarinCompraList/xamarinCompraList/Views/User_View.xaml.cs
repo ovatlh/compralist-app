@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace xamarinCompraList.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetail_View : MasterDetailPage
+    public partial class User_View : ContentPage
     {
-        public MasterDetail_View()
+        public User_View()
         {
             InitializeComponent();
-
-            this.Master = new Master_View();
-            this.Detail = new NavigationPage(new Detail_View());
-
-            //App.MasterDetail_Main = this;
         }
     }
 }
