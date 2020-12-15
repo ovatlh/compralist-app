@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCompraList.MainPage"
-             xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
+             xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels" xmlns:helpers="clr-namespace:xamarinCompraList.Helpers"
              Title="MainPage"
              x:Name="home"
              NavigationPage.HasNavigationBar="True">
@@ -10,6 +10,66 @@
     <ContentPage.BindingContext>
         <vm:MainPage_VM />
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ItemListo">
+                <!--<Label Text="{Binding .}" TextDecorations="Underline" TextColor="Red"/>-->
+                <SwipeView BackgroundColor="Transparent" Opacity="0.5">
+                    <SwipeView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.CompleteCommand}" CommandParameter="{Binding .}" />
+                    </SwipeView.GestureRecognizers>
+                    <SwipeView.LeftItems>
+                        <SwipeItems Mode="Execute">
+                            <SwipeItem Text="Borrar" BackgroundColor="Red" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+                    <Frame Padding="0" Margin="0" CornerRadius="5" BackgroundColor="#111111">
+                        <StackLayout Margin="5" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="StartAndExpand">
+                                <!--<Label Text="{Binding Id}" />-->
+
+                                <Label Text="{Binding Nombre}" TextDecorations="Strikethrough" />
+
+                                <!--<Label Text="{Binding Listo}" />-->
+                                <Label Text="{Binding Quienloagrego}" FontSize="Micro" FontAttributes="Bold" />
+                            </StackLayout>
+                            <CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />
+                        </StackLayout>
+                    </Frame>
+                </SwipeView>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ItemNOListo">
+                <!--<Label Text="{Binding .}" TextColor="Green"/>-->
+                <SwipeView BackgroundColor="Transparent">
+                    <SwipeView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.CompleteCommand}" CommandParameter="{Binding .}" />
+                    </SwipeView.GestureRecognizers>
+                    <SwipeView.LeftItems>
+                        <SwipeItems Mode="Execute">
+                            <SwipeItem Text="Borrar" BackgroundColor="Red" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+                    <Frame Padding="0" Margin="0" CornerRadius="5" BackgroundColor="Green">
+                        <StackLayout Margin="5" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="StartAndExpand">
+                                <!--<Label Text="{Binding Id}" />-->
+
+                                <Label Text="{Binding Nombre}" TextColor="#1e1e1e" />
+
+                                <!--<Label Text="{Binding Listo}" />-->
+                                <Label Text="{Binding Quienloagrego}" FontSize="Micro" TextColor="#1e1e1e" />
+                            </StackLayout>
+                            <CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />
+                        </StackLayout>
+                    </Frame>
+                </SwipeView>
+            </DataTemplate>
+
+            <helpers:ItemTemplateSelector x:Key="itemTemplateSelector" Item_Listo="{StaticResource ItemListo}" Item_NoListo="{StaticResource ItemNOListo}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <!--<StackLayout Padding="0" Margin="0" Spacing="0" Orientation="Vertical">
         <Label Text="Body" FontSize="Body" />
@@ -63,12 +123,12 @@
 
             <StackLayout Grid.Row="0" Spacing="0" Margin="0" Padding="0" BackgroundColor="Transparent" Orientation="Vertical">
                 <Label Margin="0" Padding="0" Text="Lista de compras" HorizontalTextAlignment="Center"/>
-                <CollectionView x:Name="lstItems" Margin="0" SelectionMode="Single" ItemsSource="{Binding CompralistContext.ListItems, Mode=TwoWay}">
+                <CollectionView x:Name="lstItems" BackgroundColor="Transparent" Margin="5" SelectionMode="None" ItemsSource="{Binding CompralistContext.ListItems, Mode=TwoWay}" ItemTemplate="{StaticResource itemTemplateSelector}">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout VerticalItemSpacing="0" HorizontalItemSpacing="0" Orientation="Vertical" Span="1"/>
+                        <GridItemsLayout VerticalItemSpacing="5" HorizontalItemSpacing="0" Orientation="Vertical" Span="1"/>
                     </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
+                    <!--<CollectionView.ItemTemplate>
                         <DataTemplate>
                             <SwipeView>
                                 <SwipeView.GestureRecognizers>
@@ -82,9 +142,9 @@
                                 <Frame Padding="10" Margin="0" BackgroundColor="#1e1e1e" CornerRadius="0">
                                     <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand">
                                         <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="StartAndExpand">
-                                            <!--<Label Text="{Binding Id}" />-->
+                                            --><!--<Label Text="{Binding Id}" />--><!--
                                             <Label Text="{Binding Nombre}" />
-                                            <!--<Label Text="{Binding Listo}" />-->
+                                            --><!--<Label Text="{Binding Listo}" />--><!--
                                             <Label Text="{Binding Quienloagrego}" FontSize="Micro" />
                                         </StackLayout>
                                         <CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />
@@ -92,7 +152,7 @@
                                 </Frame>
                             </SwipeView>
                         </DataTemplate>
-                    </CollectionView.ItemTemplate>
+                    </CollectionView.ItemTemplate>-->
                 </CollectionView>
             </StackLayout>
             <!--<StackLayout Grid.Row="1" Spacing="0" Margin="0" Padding="0" BackgroundColor="Transparent" Orientation="Vertical">
