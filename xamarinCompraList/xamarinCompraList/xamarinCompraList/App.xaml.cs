@@ -47,6 +47,8 @@ namespace xamarinCompraList
         public App()
         {
             Device.SetFlags(new[] { "SwipeView_Experimental" });
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY2NjMxQDMxMzgyZTMzMmUzMElheWM0S0lLUmNoMW5icWF4Umg2ZW1pUWJlS29yYTNYU2JJcmR3bkkwanM9");
 
             InitializeComponent();
 

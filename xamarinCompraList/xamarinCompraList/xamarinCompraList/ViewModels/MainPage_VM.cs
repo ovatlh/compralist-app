@@ -48,7 +48,7 @@ namespace xamarinCompraList.ViewModels
 
         private async void Add(object obj)
         {
-            string result = await App.Current.MainPage.DisplayPromptAsync("Agregando...", "¿Que quieres agregar?");
+            string result = await App.Current.MainPage.DisplayPromptAsync("Agregando...", "¿Que quieres agregar?", "Agregar", "Cancelar", "" , 45);
             if (!string.IsNullOrWhiteSpace(result))
             {
                 CompralistContext.Item_Add(result, Username);
