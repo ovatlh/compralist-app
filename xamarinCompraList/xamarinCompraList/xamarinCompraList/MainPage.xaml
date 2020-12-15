@@ -7,7 +7,7 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              Title="MainPage"
              x:Name="home"
-             NavigationPage.HasNavigationBar="True">
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BindingContext>
         <vm:MainPage_VM />
@@ -24,10 +24,10 @@
                     </SwipeView.GestureRecognizers>
                     <SwipeView.LeftItems>
                         <SwipeItems Mode="Execute">
-                            <SwipeItemView BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}">
+                            <!--<SwipeItemView BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}">
                                 <Label Text="Borrar" FontSize="Title" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{DynamicResource TransparentColor}" TextColor="{DynamicResource itemSwipe_txt_color}" />
-                            </SwipeItemView>
-                            <!--<SwipeItem Text="Borrar" BackgroundColor="Red" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>-->
+                            </SwipeItemView>-->
+                            <SwipeItem Text="Borrar" BackgroundColor="Red" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>
                         </SwipeItems>
                     </SwipeView.LeftItems>
                     <Frame Padding="0" Margin="0" CornerRadius="5" BackgroundColor="{DynamicResource itemYES_bg_color}" BorderColor="{DynamicResource itemYES_brd_color}">
@@ -41,7 +41,7 @@
                                 <Label Text="{Binding Quienloagrego}" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource itemYESUsername_txt_color}" />
                             </StackLayout>
                             <!--<CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />-->
-                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemcheckbox_bg_color}" CheckedColor="{DynamicResource itemcheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
+                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemcheckbox_bg_color}" CheckedColor="{DynamicResource itemYEScheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
                         </StackLayout>
                     </Frame>
                 </SwipeView>
@@ -55,10 +55,10 @@
                     </SwipeView.GestureRecognizers>
                     <SwipeView.LeftItems>
                         <SwipeItems Mode="Execute">
-                            <SwipeItemView BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}">
+                            <!--<SwipeItemView BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}">
                                 <Label Text="Borrar" FontSize="Title" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="{DynamicResource TransparentColor}" TextColor="{DynamicResource itemSwipe_txt_color}" />
-                            </SwipeItemView>
-                            <!--<SwipeItem Text="Borrar" BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>-->
+                            </SwipeItemView>-->
+                            <SwipeItem Text="Borrar" BackgroundColor="{DynamicResource itemSwipe_bg_color}" Command="{Binding Source={x:Reference lstItems}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding .}"/>
                         </SwipeItems>
                     </SwipeView.LeftItems>
                     <Frame Padding="0" Margin="0" CornerRadius="5" BackgroundColor="{DynamicResource itemNO_bg_color}">

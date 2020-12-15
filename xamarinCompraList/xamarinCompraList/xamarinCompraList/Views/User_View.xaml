@@ -10,17 +10,17 @@
         <vm:User_VM/>
     </ContentPage.BindingContext>
 
-    <Grid Padding="10" VerticalOptions="FillAndExpand">
+    <Grid Padding="10" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource fullview_bg_color}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="Usuario"/>
+        <Label Grid.Row="0" Text="Usuario" TextColor="{DynamicResource subtitle_txt_color}"/>
 
         <StackLayout Grid.Row="1">
-            <Entry x:Name="txtUsername" Text="{Binding Username}" Placeholder="Nombre"/>
+            <Entry x:Name="txtUsername" Text="{Binding Username}" Placeholder="Nombre" TextColor="{DynamicResource subtitle_txt_color}" PlaceholderColor="{DynamicResource subtitle_txt_color}"/>
             <CollectionView VerticalOptions="StartAndExpand" x:Name="lstAvatars" SelectionMode="Single" ItemsSource="{Binding Avatars}" SelectionChangedCommand="{Binding AvatarSelectedCommand}" SelectedItem="{Binding AvatarString}" Margin="0">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout VerticalItemSpacing="0" HorizontalItemSpacing="0" Orientation="Vertical" Span="3"/>
@@ -31,14 +31,15 @@
                         <Frame Padding="10" Margin="0" BackgroundColor="Transparent">
                             <StackLayout Orientation="Vertical" Spacing="0">
                                 <Frame Padding="0" Margin="0" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="Green" CornerRadius="360" />
-                                <Label Text="{Binding .}" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding .}" HorizontalTextAlignment="Center" TextColor="{DynamicResource subtitle_txt_color}"/>
                             </StackLayout>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="{Binding BtnThemeText}" Command="{Binding ThemeCommand}" BackgroundColor="{DynamicResource menuview_bg_color}" TextColor="{DynamicResource menuview_txt_color}" />
         </StackLayout>
-        
-        <Button Grid.Row="2" VerticalOptions="EndAndExpand" Text="Guardar" Command="{Binding SavePreferencesCommand}"/>
+
+        <Button Grid.Row="2" VerticalOptions="EndAndExpand" Text="Guardar" Command="{Binding SavePreferencesCommand}" BackgroundColor="{DynamicResource menuview_bg_color}" TextColor="{DynamicResource menuview_txt_color}"/>
     </Grid>
 </ContentPage>

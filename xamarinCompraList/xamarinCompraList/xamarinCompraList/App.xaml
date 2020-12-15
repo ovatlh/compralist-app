@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCompraList.App">
     <Application.Resources>
-        <ResourceDictionary Source="Themes/NightTheme.xaml" />
+        <ResourceDictionary Source="Themes/DayTheme.xaml" />
 
         <Style TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="{DynamicResource fullview_bg_color}" />

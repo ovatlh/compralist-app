@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="xamarinCompraList.Themes.NightTheme">
+             x:Class="xamarinCompraList.Themes.DayTheme">
 
     <Color x:Key="TransparentColor">Transparent</Color>
 
     <!--<Color x:Key="fullview_bg_color">#161B22</Color>-->
-    <Color x:Key="fullview_bg_color">#0D1117</Color>
-    <Color x:Key="fullview_txt_color">#F0F6D9</Color>
+    <Color x:Key="fullview_bg_color">#FFFFFF</Color>
+    <Color x:Key="fullview_txt_color">#24292E</Color>
 
     <!--<Color x:Key="menuview_bg_color">#0D1117</Color>-->
-    <Color x:Key="menuview_bg_color">#161B22</Color>
-    <Color x:Key="menuview_txt_color">#F0F6D9</Color>
-    
-    <Color x:Key="subtitle_txt_color">#F0F6D9</Color>
+    <Color x:Key="menuview_bg_color">#24292E</Color>
+    <Color x:Key="menuview_txt_color">#FFFCEB</Color>
 
-    <Color x:Key="userbtn_bg_color">#f5f5f5</Color>
+    <Color x:Key="subtitle_txt_color">#24292E</Color>
+
+    <Color x:Key="userbtn_bg_color">#FFFCEB</Color>
     <!--<Color x:Key="userbtn_txt_color">#0D1117</Color>-->
-    <Color x:Key="userbtn_txt_color">#161B22</Color>
+    <Color x:Key="userbtn_txt_color">#24292E</Color>
 
     <!--<Color x:Key="addbtn_bg_color">#0D1117</Color>-->
-    <Color x:Key="addbtn_bg_color">#f5f5f5</Color>
-    <Color x:Key="addbtn_txt_color">#161B22</Color>
+    <Color x:Key="addbtn_bg_color">#24292E</Color>
+    <Color x:Key="addbtn_txt_color">#FFFCEB</Color>
 
     <Color x:Key="itemSwipe_bg_color">Red</Color>
     <Color x:Key="itemSwipe_txt_color">#F0F6D9</Color>
 
-    <Color x:Key="itemNO_bg_color">#1F6FEB</Color>
+    <Color x:Key="itemNO_bg_color">#0366D6</Color>
     <Color x:Key="itemNO_txt_color">#F0F6D9</Color>
-    <Color x:Key="itemcheckbox_bg_color">#F0F6D9</Color>
+    <!--<Color x:Key="itemNOcheckbox_bg_color">#F0F6D9</Color>-->
     <Color x:Key="itemcheckbox_tick_color">#ffffff</Color>
     <Color x:Key="itemNOUsername_txt_color">#ECF0F1</Color>
 
     <Color x:Key="itemYES_brd_color">#1e1e1e</Color>
     <!--<Color x:Key="itemYES_bg_color">#161B22</Color>-->
-    <Color x:Key="itemYES_bg_color">#0D1117</Color>
-    <Color x:Key="itemYES_txt_color">#ECF0F1</Color>
-    <Color x:Key="itemYEScheckbox_bg_color">#0D1117</Color>
-    <Color x:Key="itemYESUsername_txt_color">#ECF0F1</Color>
+    <Color x:Key="itemYES_bg_color">#FFFFFF</Color>
+    <Color x:Key="itemYES_txt_color">#24292E</Color>
+    <Color x:Key="itemYEScheckbox_bg_color">#0366D6</Color>
+    <Color x:Key="itemYESUsername_txt_color">#24292E</Color>
 
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
     

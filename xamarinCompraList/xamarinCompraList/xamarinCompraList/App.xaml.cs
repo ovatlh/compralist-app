@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using xamarinCompraList.Models;
+using xamarinCompraList.Themes;
 using xamarinCompraList.Views;
 
 namespace xamarinCompraList
@@ -14,6 +16,7 @@ namespace xamarinCompraList
         public static compralistContext CompralistContext { get; set; }
         public static Avatar UserAvatar { get; set; }
         public static string Username { get; set; }
+        public static bool NightTheme { get; set; }
 
         //public static void Open_Menu()
         //{
@@ -44,6 +47,30 @@ namespace xamarinCompraList
             GetPreferences();
         }
 
+        public static void SaveTheme(bool nightTheme)
+        {
+            Preferences.Set("NightTeme", nightTheme);
+            LoadTheme();
+        }
+
+        public static void LoadTheme()
+        {
+            NightTheme = Preferences.Get("NightTeme", false);
+
+            if (NightTheme)
+            {
+                ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+                mergedDictionaries.Clear();
+                mergedDictionaries.Add(new NightTheme());
+            }
+            else
+            {
+                ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+                mergedDictionaries.Clear();
+                mergedDictionaries.Add(new DayTheme());
+            }
+        }
+
         public App()
         {
             Device.SetFlags(new[] { "SwipeView_Experimental" });
@@ -57,6 +84,8 @@ namespace xamarinCompraList
 
             CompralistContext = new compralistContext();
 
+            LoadTheme();
+
             if (UserAvatar == Avatar.None || string.IsNullOrWhiteSpace(Username))
             {
                 MainPage = new User_View();
@@ -65,7 +94,8 @@ namespace xamarinCompraList
             {
                 //MainPage = new MasterDetail_View();
                 //MainPage = new NavigationPage(new Detail_View());
-                MainPage = new MainPage();
+                MainPage = new NavigationPage(new MainPage());
+                //MainPage = new MainPage();
                 //MainPage = new Detail_View();
             }
         }
