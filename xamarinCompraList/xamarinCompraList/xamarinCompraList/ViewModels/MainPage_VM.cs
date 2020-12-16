@@ -16,6 +16,7 @@ namespace xamarinCompraList.ViewModels
         public Command CompleteCommand { get; set; }
         public compralistContext CompralistContext { get; set; }
         public Avatar UserAvatar { get; set; }
+        public string AvatarString { get; set; }
         public string Username { get; set; }
 
         public MainPage_VM()
@@ -23,6 +24,7 @@ namespace xamarinCompraList.ViewModels
             CompralistContext = App.CompralistContext;
             CompralistContext.List_OrderBy();
             UserAvatar = App.UserAvatar;
+            AvatarString = Enum.GetName(typeof(Avatar), UserAvatar);
             Username = App.Username;
 
             UserCommand = new Command(User);

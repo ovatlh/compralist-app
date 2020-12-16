@@ -14,6 +14,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
+        <helpers:AvatarImageSelector x:Key="imgAvatarConverter" />
         <ResourceDictionary>
             
             <DataTemplate x:Key="ItemListo">
@@ -121,7 +122,9 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Column="0" Margin="0" Padding="10,0,0,0" Text="{Binding Username}" FontSize="Micro" VerticalOptions="Center" HorizontalOptions="End" BackgroundColor="{DynamicResource TransparentColor}" TextColor="{DynamicResource userbtn_txt_color}" />
-                    <Frame Grid.Column="1" Margin="0" Padding="0" CornerRadius="360" VerticalOptions="Center" HorizontalOptions="End" BackgroundColor="Green" WidthRequest="25" HeightRequest="25" />
+                    <Frame Grid.Column="1" Margin="0" Padding="0" CornerRadius="360" VerticalOptions="Center" HorizontalOptions="End" BackgroundColor="Transparent" WidthRequest="25" HeightRequest="25">
+                        <Image Margin="0" WidthRequest="50" HeightRequest="50" Aspect="Fill" VerticalOptions="Center" HorizontalOptions="Center" Source="{Binding AvatarString,Converter={StaticResource imgAvatarConverter}}"/>
+                    </Frame>
                 </Grid>
             </Frame>
         </Grid>

@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCompraList.Views.User_View"
              xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
+             xmlns:helpers="clr-namespace:xamarinCompraList.Helpers"
              Title="User"
              NavigationPage.HasNavigationBar="True">
 
     <ContentPage.BindingContext>
         <vm:User_VM/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <helpers:AvatarImageSelector x:Key="imgAvatarConverter" />
+    </ContentPage.Resources>
 
     <Grid Padding="10" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource fullview_bg_color}">
         <Grid.RowDefinitions>
@@ -30,7 +34,9 @@
                     <DataTemplate>
                         <Frame Padding="10" Margin="0" BackgroundColor="Transparent">
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Frame Padding="0" Margin="0" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="Green" CornerRadius="360" />
+                                <Frame Padding="0" Margin="0" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" CornerRadius="360">
+                                    <Image Margin="0" WidthRequest="50" HeightRequest="50" Aspect="Fill" VerticalOptions="Center" HorizontalOptions="Center" Source="{Binding .,Converter={StaticResource imgAvatarConverter}}"/>
+                                </Frame>
                                 <Label Text="{Binding .}" HorizontalTextAlignment="Center" TextColor="{DynamicResource subtitle_txt_color}"/>
                             </StackLayout>
                         </Frame>
