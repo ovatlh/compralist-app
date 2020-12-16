@@ -9,7 +9,7 @@ using xamarinCompraList.Views;
 
 namespace xamarinCompraList
 {
-    public enum Avatar { None, Papa, Mama, Hijo, Hija, Mascota, Auto, Avion, Barco, Helicoptero, Robot, Planta, Alien}
+    public enum Avatar { None, Abuelito, Abuelita, Papa, Mama, Hijo, Hija, Mascota, Auto, Avion, Barco, Helicoptero, Robot, Planta, Alien}
     public partial class App : Application
     {
         //public static MasterDetailPage MasterDetail_Main { get; set; }

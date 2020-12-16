@@ -15,6 +15,8 @@
     <None Remove="Imgs\10.png" />
     <None Remove="Imgs\11.png" />
     <None Remove="Imgs\12.png" />
+    <None Remove="Imgs\13.png" />
+    <None Remove="Imgs\14.png" />
     <None Remove="Imgs\2.png" />
     <None Remove="Imgs\3.png" />
     <None Remove="Imgs\4.png" />
@@ -36,6 +38,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Imgs\12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imgs\13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imgs\14.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Imgs\2.png">
