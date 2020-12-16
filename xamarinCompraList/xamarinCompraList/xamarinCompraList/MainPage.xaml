@@ -5,7 +5,7 @@
              xmlns:vm ="clr-namespace:xamarinCompraList.ViewModels"
              xmlns:helpers="clr-namespace:xamarinCompraList.Helpers"
              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             Title="MainPage test"
+             Title="MainPage test 2"
              x:Name="home"
              NavigationPage.HasNavigationBar="False">
 
