@@ -94,8 +94,8 @@ namespace xamarinCompraList
             {
                 //MainPage = new MasterDetail_View();
                 //MainPage = new NavigationPage(new Detail_View());
-                MainPage = new NavigationPage(new MainPage());
-                //MainPage = new MainPage();
+                //MainPage = new NavigationPage(new MainPage());
+                MainPage = new MainPage();
                 //MainPage = new Detail_View();
             }
         }
