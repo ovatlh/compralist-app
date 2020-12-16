@@ -36,7 +36,7 @@
     <!--<Color x:Key="itemYES_bg_color">#161B22</Color>-->
     <Color x:Key="itemYES_bg_color">#0D1117</Color>
     <Color x:Key="itemYES_txt_color">#ECF0F1</Color>
-    <Color x:Key="itemYEScheckbox_bg_color">#0D1117</Color>
+    <Color x:Key="itemYEScheckbox_bg_color">#1F6FEB</Color>
     <Color x:Key="itemYESUsername_txt_color">#ECF0F1</Color>
 
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>

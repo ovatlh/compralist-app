@@ -42,7 +42,7 @@
                                 <Label Text="{Binding Quienloagrego}" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource itemYESUsername_txt_color}" />
                             </StackLayout>
                             <!--<CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />-->
-                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemcheckbox_bg_color}" CheckedColor="{DynamicResource itemYEScheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
+                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemYEScheckbox_bg_color}" CheckedColor="{DynamicResource itemYEScheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
                         </StackLayout>
                     </Frame>
                 </SwipeView>
@@ -73,7 +73,7 @@
                                 <Label Text="{Binding Quienloagrego}" FontSize="Micro" TextColor="{DynamicResource itemNOUsername_txt_color}" />
                             </StackLayout>
                             <!--<CheckBox IsEnabled="False" IsChecked="{Binding Listo}" HorizontalOptions="End" />-->
-                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemcheckbox_bg_color}" CheckedColor="{DynamicResource itemcheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
+                            <syncfusion:SfCheckBox HorizontalOptions="End" IsEnabled="False" IsChecked="{Binding Listo}" CornerRadius="360" UncheckedColor="{DynamicResource itemNOcheckbox_bg_color}" CheckedColor="{DynamicResource itemNOcheckbox_bg_color}" TickColor="{DynamicResource itemcheckbox_tick_color}"/>
                         </StackLayout>
                     </Frame>
                 </SwipeView>

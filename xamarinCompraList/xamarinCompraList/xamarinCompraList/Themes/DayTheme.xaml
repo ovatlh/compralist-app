@@ -28,7 +28,7 @@
 
     <Color x:Key="itemNO_bg_color">#0366D6</Color>
     <Color x:Key="itemNO_txt_color">#F0F6D9</Color>
-    <!--<Color x:Key="itemNOcheckbox_bg_color">#F0F6D9</Color>-->
+    <Color x:Key="itemNOcheckbox_bg_color">#F0F6D9</Color>
     <Color x:Key="itemcheckbox_tick_color">#ffffff</Color>
     <Color x:Key="itemNOUsername_txt_color">#ECF0F1</Color>
 
