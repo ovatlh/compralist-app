@@ -109,7 +109,16 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Text="CompraList" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource TransparentColor}" TextColor="{DynamicResource menuview_txt_color}" />
+            <Grid Grid.Column="0" RowSpacing="0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Image Grid.Column="0" Source="clicon" HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                <Label Grid.Column="1" Text="CompraList" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource TransparentColor}" TextColor="{DynamicResource menuview_txt_color}" />
+            </Grid>
 
             <Frame Grid.Column="1" Margin="0" Padding="0" CornerRadius="180" BackgroundColor="{DynamicResource userbtn_bg_color}" VerticalOptions="Center">
                 <Frame.GestureRecognizers>
