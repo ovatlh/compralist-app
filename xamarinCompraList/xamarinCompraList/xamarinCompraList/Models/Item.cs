@@ -25,6 +25,6 @@ namespace xamarinCompraList.Models
             set { listo = value; Actualizar(); }
         }
 
-        public string Quienloagrego { get; set; }
+        public string QuienAgrego { get; set; }
     }
 }

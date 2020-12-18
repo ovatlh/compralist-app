@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.SignalR.Client;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using xamarinCompraList.Models;
@@ -18,6 +21,9 @@ namespace xamarinCompraList.ViewModels
         public Avatar UserAvatar { get; set; }
         public string AvatarString { get; set; }
         public string Username { get; set; }
+        //string hostURL = "https://compralist-web.conveyor.cloud/compraListHub"; 
+        //"https://compralist.itesrc.net/compraListHub";
+        
 
         public MainPage_VM()
         {
@@ -44,7 +50,7 @@ namespace xamarinCompraList.ViewModels
             //App.CompralistContext.ListItems.Remove(item);
             //App.CompralistContext.Item_Delete(item);
             CompralistContext.Item_Delete(item);
-            await App.Current.MainPage.DisplayToastAsync("DeleteCommand activado", 500);
+            //await App.Current.MainPage.DisplayToastAsync("DeleteCommand activado", 500);
             //CompralistContext.ListItems = App.CompralistContext.ListItems;
         }
 
@@ -64,6 +70,18 @@ namespace xamarinCompraList.ViewModels
             //res.Listo = true;
             CompralistContext.Item_Complete(result, Username);
             //CompralistContext = App.CompralistContext;
+        }
+
+        public async Task ServerConnection()
+        {
+            try
+            {
+                await CompralistContext.hubConnection.StartAsync();
+            }
+            catch
+            {
+                await App.Current.MainPage.DisplayAlert("Error","No se pudo conectar con el servidor", "Ok");
+            }
         }
     }
 }
